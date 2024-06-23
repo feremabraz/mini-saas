@@ -1,3 +1,7 @@
 {
-  "prettier.configPath": ".prettier.json"
+  "prettier.configPath": ".prettier.json",
+  "[edge]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+  }
 }

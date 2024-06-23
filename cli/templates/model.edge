@@ -1,0 +1,58 @@
+/**
+ * Generated model: {{ modelName }}
+ * Generated at: {{ timestamp }}
+ */
+
+export interface {{ modelName }} {
+  @each(field in fields)
+  {{ field.name }}{{ field.required ? '' : '?' }}: {{ field.type }};
+  @endeach
+}
+
+export class {{ modelName }}Model {
+  @each(field in fields)
+  private _{{ field.name }}{{ field.required ? '' : '?' }}: {{ field.type }};
+  @endeach
+
+  constructor(data: Partial<{{ modelName }}>) {
+    @each(field in fields)
+      @if(field.required)
+    if (data.{{ field.name }} === undefined) {
+      throw new Error('{{ field.name }} is required');
+    }
+    this._{{ field.name }} = data.{{ field.name }};
+      @else
+    this._{{ field.name }} = data.{{ field.name }};
+      @endif
+    @endeach
+  }
+
+  @each(field in fields)
+  get {{ field.name }}(): {{ field.type }}{{ field.required ? '' : ' | undefined' }} {
+    return this._{{ field.name }};
+  }
+
+    @if(field.required)
+  set {{ field.name }}(value: {{ field.type }}) {
+    this._{{ field.name }} = value;
+  }
+    @else
+  set {{ field.name }}(value: {{ field.type }} | undefined) {
+    this._{{ field.name }} = value;
+  }
+    @endif
+
+  @endeach
+
+  toJSON(): {{ modelName }} {
+    return {
+      @each(field in fields)
+      {{ field.name }}: this._{{ field.name }},
+      @endeach
+    };
+  }
+
+  static fromJSON(json: {{ modelName }}): {{ modelName }}Model {
+    return new {{ modelName }}Model(json);
+  }
+}
