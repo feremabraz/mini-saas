@@ -1,5 +1,5 @@
 import { FeatureCard } from '@/components/ui/featured';
-import { FilePenLine, PencilLine, Radar } from 'lucide-react';
+import { BookText, FilePenLine, PencilLine, Radar } from 'lucide-react';
 
 export function Features() {
   return (
@@ -12,13 +12,18 @@ export function Features() {
         />
         <FeatureCard
           title="Easy to follow"
-          description="Opinionated but easy to follow: server actions, optimistic UI, prisma, lucia, payments with stripe and more."
+          description="Opinionated but easy to reason about: server actions, optimistic UI, prisma, lucia, payments with stripe, mail sending and more."
           icon={<Radar />}
         />
         <FeatureCard
           title="Customizable"
-          description="Mini provides an actual MVP. With just a few steps in the tool you start a new idea, attractive and brandeable."
+          description="Mini provides a whitelabel MVP. You use the CLI to do the chores associated with customization, focusing on value proposition."
           icon={<PencilLine />}
+        />
+        <FeatureCard
+          title="Self-documented"
+          description="There is no need to follow YouTube tutorials or read a README when you follow a tool, and it's all there, in your project."
+          icon={<BookText />}
         />
       </div>
     </section>

@@ -5,7 +5,7 @@ import { Underlined } from '@/components/ui/underlined';
 import { Emoji } from '@/components/ui/emoji';
 
 import BoringAvatar from 'boring-avatars';
-import { ChevronRight } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 
 export function Hero() {
   const boringColors = ['#BBB5BD', '#BDBABD', '#C4BAB9'];
@@ -20,10 +20,10 @@ export function Hero() {
               className="inline-flex items-center gap-x-2 border text-xs px-2 py-1 rounded-lg transition"
               href="#"
             >
-              PRO release - Join to waitlist
               <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg bg-muted-foreground/15 font-semibold text-sm">
-                <ChevronRight className="size-3" />
+                <Terminal className="size-3" />
               </span>
+              gh repo clone feremabraz/mini
             </a>
           </div>
           {/* End Announcement Banner */}
@@ -111,7 +111,7 @@ export function Hero() {
                 />
               </div>
               <div className="pt-2 sm:pt-0 grid sm:block sm:flex-[0_0_auto]">
-                <Button>Get started</Button>
+                <Button>Just check it</Button>
               </div>
             </div>
           </form>

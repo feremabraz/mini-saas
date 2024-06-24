@@ -4,7 +4,7 @@ import { Karla as FontSans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Mini SaaS Template',
+  title: 'Mini Template & Tool',
   description: 'Template with tool, shadcn-style.',
 };
 
