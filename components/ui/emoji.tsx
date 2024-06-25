@@ -11,6 +11,8 @@ interface AnimatedImageProps {
   className?: string;
   animationDuration?: number;
   animationDistance?: number;
+  direction?: 'horizontal' | 'vertical';
+  reverse?: boolean;
 }
 
 export function Emoji({
@@ -21,12 +23,19 @@ export function Emoji({
   className,
   animationDuration = 4,
   animationDistance = 10,
+  direction = 'horizontal',
+  reverse = false,
 }: AnimatedImageProps) {
+  const getAnimationProps = () => {
+    const distance = reverse ? -animationDistance : animationDistance;
+    return direction === 'horizontal'
+      ? { x: [0, distance, 0] }
+      : { y: [0, distance, 0] };
+  };
+
   return (
     <motion.div
-      animate={{
-        x: [0, animationDistance, 0],
-      }}
+      animate={getAnimationProps()}
       transition={{
         duration: animationDuration,
         repeat: Infinity,
