@@ -100,10 +100,6 @@ export async function show(filePath, options = {}) {
   }
 }
 
-show(join(__dirname, 'sample.png')).catch((error) =>
-  console.error(pc.red(error.message))
-);
-
-show(join(__dirname, 'sample2.png')).catch((error) =>
+show(join(__dirname, '../assets/sample.png')).catch((error) =>
   console.error(pc.red(error.message))
 );
