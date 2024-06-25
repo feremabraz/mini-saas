@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Template with tool, shadcn-style.',
 };
 
-const fontSans = FontSans({
+export const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 });
