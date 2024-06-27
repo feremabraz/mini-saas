@@ -12,9 +12,17 @@
     "prepare": "husky",
     "mini": "node cli/main.mjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "stripe:listen": "stripe listen --forward-to localhost:3000/api/webhooks/stripe"
   },
   "dependencies": {
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@node-rs/argon2": "^1.8.3",
+    "@node-rs/bcrypt": "^1.10.4",
+    "@prisma/client": "^5.16.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
@@ -24,11 +32,16 @@
     "embla-carousel": "^8.1.5",
     "embla-carousel-react": "^8.1.5",
     "framer-motion": "^11.2.11",
+    "lucia": "^3.2.0",
     "lucide-react": "^0.395.0",
     "next": "15.0.0-rc.0",
+    "oslo": "^1.2.1",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
-    "tailwind-merge": "^2.3.0"
+    "resend": "^3.4.0",
+    "stripe": "^16.0.0",
+    "tailwind-merge": "^2.3.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
@@ -56,9 +69,11 @@
     "picocolors": "^1.0.1",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
+    "prisma": "^5.16.0",
     "storybook": "^8.1.10",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
+    "zod-prisma": "^0.5.4",
     "zx": "^8.1.3"
   }
 }
