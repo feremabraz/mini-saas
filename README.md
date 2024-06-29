@@ -14,21 +14,22 @@ This project is currently a WIP. All features are being actively developed, plea
 
 ## ✅ Key Features
 
-- **Greefield Stack:**
+- **Greenfield Stack:**
 
   - Built with Next.js 15 & React 19 (Release Candidates)
   - All dependencies to the latest version
   - Server actions with optimistic UI for improved user experience
 
-- **Design-Driven Development:**
+- **Design-Driven Development:** (if you want)
 
   - Figma file included, themeable with variants
-  - Includes Storybook too
+  - Useful Storybook
 
 - **Component Library:**
 
   - Custom shadcn-ui components
   - Animated with Framer Motion only
+  - Unified code-style
 
 - **CLI Tool:**
   - MVC code-generation for rapid development
@@ -38,6 +39,6 @@ This project is currently a WIP. All features are being actively developed, plea
 
 `pnpm install && pnpm dev`, you know the drill.
 
-## 📚 Documentation
+## 📚 Customization, Generation & Guide
 
 `pnpm mini`
