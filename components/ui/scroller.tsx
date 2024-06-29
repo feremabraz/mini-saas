@@ -7,10 +7,11 @@ import {
   TargetAndTransition,
   Transition,
 } from 'framer-motion';
+import { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface Logo {
-  icon: React.ElementType;
+  icon: LucideIcon;
   name: string;
 }
 
