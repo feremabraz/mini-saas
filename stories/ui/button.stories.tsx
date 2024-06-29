@@ -16,6 +16,7 @@ const meta = {
         'ghost',
         'link',
         'outline',
+        'ringHover',
       ],
     },
     size: {
@@ -76,7 +77,14 @@ export const Outline: Story = {
   },
 };
 
-// Sizes
+export const RingHover: Story = {
+  args: {
+    variant: 'ringHover',
+    children: 'Ring Hover',
+  },
+};
+
+// Sizes (unchanged)
 
 export const SizeDefault: Story = {
   args: {
@@ -103,5 +111,33 @@ export const SizeSmall: Story = {
   args: {
     size: 'sm',
     children: 'Small Size',
+  },
+};
+
+// Other animations
+
+export const Wobble: Story = {
+  args: {
+    children: 'Wobble Button',
+    variant: 'default',
+    size: 'default',
+    customAnimation: {
+      whileHover: {
+        rotate: [0, -10, 10, -10, 10, 0],
+        transition: {
+          duration: 0.5,
+          ease: 'easeInOut',
+        },
+      },
+    },
+  },
+};
+
+export const NoAnimation: Story = {
+  args: {
+    children: 'No Animations',
+    variant: 'default',
+    size: 'default',
+    disableAnimation: true,
   },
 };

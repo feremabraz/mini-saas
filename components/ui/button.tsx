@@ -1,6 +1,14 @@
+'use client';
+
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import {
+  motion,
+  HTMLMotionProps,
+  MotionProps,
+  MotionValue,
+} from 'framer-motion';
 
 import { cn } from '@/lib/utils';
 
@@ -19,6 +27,8 @@ const buttonVariants = cva(
           'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
+        ringHover:
+          'bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:ring-2 hover:ring-primary/90 hover:ring-offset-2',
       },
       size: {
         default: 'h-9 px-4 py-2',
@@ -34,24 +44,102 @@ const buttonVariants = cva(
   }
 );
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+type ButtonBaseProps = VariantProps<typeof buttonVariants> & {
+  isLoading?: boolean;
+  disableAnimation?: boolean;
+};
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
+type SlotButtonProps = ButtonBaseProps &
+  React.ComponentPropsWithoutRef<typeof Slot>;
+type MotionButtonProps = ButtonBaseProps &
+  Omit<HTMLMotionProps<'button'>, 'children'> & {
+    children?: React.ReactNode | MotionValue<number> | MotionValue<string>;
+    customAnimation?: MotionProps;
+  };
+
+const ButtonContent: React.FC<{
+  isLoading?: boolean;
+  children?: React.ReactNode | MotionValue<number> | MotionValue<string>;
+}> = ({ isLoading, children }) => {
+  if (isLoading) {
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
+      <motion.div
+        className="w-5 h-5 border-2 border-current border-t-transparent rounded-full"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
       />
     );
+  }
+  if (children instanceof MotionValue) {
+    return <motion.span>{children}</motion.span>;
+  }
+  return <>{children}</>;
+};
+
+const SlotButton = React.forwardRef<HTMLElement, SlotButtonProps>(
+  ({ className, variant, size, isLoading, ...props }, ref) => (
+    <Slot
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    >
+      <ButtonContent isLoading={isLoading}>{props.children}</ButtonContent>
+    </Slot>
+  )
+);
+SlotButton.displayName = 'SlotButton';
+
+const defaultAnimation: MotionProps = {
+  whileHover: { scale: 1.025 },
+  whileTap: { scale: 0.95 },
+  transition: { type: 'spring', stiffness: 400, damping: 10 },
+};
+
+const MotionButton = React.forwardRef<HTMLButtonElement, MotionButtonProps>(
+  (
+    {
+      className,
+      variant,
+      size,
+      isLoading,
+      customAnimation,
+      disableAnimation,
+      ...props
+    },
+    ref
+  ) => {
+    const animationProps = disableAnimation
+      ? {}
+      : customAnimation || defaultAnimation;
+
+    return (
+      <motion.button
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        disabled={isLoading || props.disabled}
+        {...animationProps}
+        {...props}
+      >
+        <ButtonContent isLoading={isLoading}>{props.children}</ButtonContent>
+      </motion.button>
+    );
+  }
+);
+MotionButton.displayName = 'MotionButton';
+
+type ButtonProps =
+  | (SlotButtonProps & { asChild: true })
+  | (MotionButtonProps & { asChild?: false });
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    if (props.asChild) {
+      return <SlotButton {...props} ref={ref as React.Ref<HTMLElement>} />;
+    }
+    return <MotionButton {...props} ref={ref} />;
   }
 );
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };
+export type { ButtonProps };
