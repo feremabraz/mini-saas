@@ -1,12 +1,19 @@
 import { Footer } from '@/components/footer';
-import { Nav } from '@/components/nav';
 import { Button } from '@/components/ui/button';
 import { Emoji } from '@/components/ui/emoji';
 
+import { FixedNav } from '@/components/ui/fixednav';
+import { StickyNav } from '@/components/ui/stickynav';
+
 export default function NotFound() {
+  const links = [
+    { href: '#features', label: 'Features' },
+    { href: '#showcase', label: 'Showcase' },
+    { href: 'https://github.com/', label: 'GitHub' },
+  ];
   return (
     <>
-      <Nav />
+      <StickyNav links={links} />
       <main>
         <div className="grid min-h-full grid-cols-1">
           <div className="w-full px-6 py-24 mx-auto max-w-7xl sm:py-32 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:px-24">

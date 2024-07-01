@@ -1,14 +1,21 @@
-import { Nav } from '@/components/nav';
 import { Hero } from '@/components/hero';
 import { Features } from '@/components/features';
 import { Banner } from '@/components/banner';
 import { Footer } from '@/components/footer';
 import { Faq } from '@/components/faq';
 
+import { FixedNav } from '@/components/ui/fixednav';
+import { StickyNav } from '@/components/ui/stickynav';
+
 export default function LandingPage() {
+  const links = [
+    { href: '#features', label: 'Features' },
+    { href: '#showcase', label: 'Showcase' },
+    { href: 'https://github.com/', label: 'GitHub' },
+  ];
   return (
     <>
-      <Nav />
+      <StickyNav links={links} />
       <main>
         <Hero />
         <Banner />
