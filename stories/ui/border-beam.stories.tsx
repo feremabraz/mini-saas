@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { BorderBeam } from '@/components/ui/borderbeam';
+import { BorderBeam } from '@/components/ui/border-beam';
 
 const meta = {
   title: 'Components/BorderBeam',

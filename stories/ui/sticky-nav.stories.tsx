@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StickyNav, StickyNavProps } from '@/components/ui/stickynav';
+import { StickyNav, StickyNavProps } from '@/components/ui/sticky-nav';
 
 const meta: Meta<typeof StickyNav> = {
   title: 'Components/Nav-StickyNav',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { BentoGrid, BentoCard } from '@/components/ui/bentogrid';
+import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
 import { Bird, Coffee, Sun, Moon, Star, Heart, Zap, Cloud } from 'lucide-react';
 
 const meta = {

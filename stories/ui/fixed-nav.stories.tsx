@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FixedNav } from '@/components/ui/fixednav';
+import { FixedNav } from '@/components/ui/fixed-nav';
 
 const meta: Meta<typeof FixedNav> = {
   title: 'Components/Nav-FixedNav',

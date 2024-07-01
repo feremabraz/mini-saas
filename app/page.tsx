@@ -4,8 +4,8 @@ import { Banner } from '@/components/banner';
 import { Footer } from '@/components/footer';
 import { Faq } from '@/components/faq';
 
-import { FixedNav } from '@/components/ui/fixednav';
-import { StickyNav } from '@/components/ui/stickynav';
+import { FixedNav } from '@/components/ui/fixed-nav';
+import { StickyNav } from '@/components/ui/sticky-nav';
 
 export default function LandingPage() {
   const links = [

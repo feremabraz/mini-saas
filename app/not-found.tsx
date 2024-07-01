@@ -2,8 +2,8 @@ import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Emoji } from '@/components/ui/emoji';
 
-import { FixedNav } from '@/components/ui/fixednav';
-import { StickyNav } from '@/components/ui/stickynav';
+import { FixedNav } from '@/components/ui/fixed-nav';
+import { StickyNav } from '@/components/ui/sticky-nav';
 
 export default function NotFound() {
   const links = [
