@@ -24,6 +24,7 @@
     "@node-rs/bcrypt": "^1.10.4",
     "@prisma/client": "^5.16.0",
     "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "boring-avatars": "^1.10.2",
