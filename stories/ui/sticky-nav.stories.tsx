@@ -10,8 +10,10 @@ const meta: Meta<typeof StickyNav> = {
   },
   decorators: [
     (Story) => (
-      <div className="min-h-[300vh] bg-gradient-to-b from-[rgba(255,255,255,.1)] to-[rgba(255,255,255,0)]">
-        <Story />
+      <>
+        <div className="bg-slate-700">
+          <Story />
+        </div>
         <div className="mt-20 p-4">
           <h1 className="text-2xl font-bold mb-4 mt-20">
             Scroll down to see sticky behavior
@@ -20,8 +22,7 @@ const meta: Meta<typeof StickyNav> = {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
             dui mauris.
           </p>
-          {/* Add more content here to make the page scrollable */}
-          {Array(20)
+          {Array(50)
             .fill(0)
             .map((_, i) => (
               <p key={i} className="mb-4">
@@ -29,7 +30,7 @@ const meta: Meta<typeof StickyNav> = {
               </p>
             ))}
         </div>
-      </div>
+      </>
     ),
   ],
 };

@@ -39,9 +39,9 @@ export const StickyNav: React.FC<StickyNavProps> = ({ links }) => {
           visible: { y: '0%' },
         }}
         transition={{ duration: 0.2 }}
-        className="fixed top-0 z-10 flex w-full justify-center pt-3"
+        className="fixed top-0 z-10 pt-2 flex w-full justify-center"
       >
-        <nav className="flex justify-between gap-3 rounded-3xl bg-white p-5 *:rounded-xl *:border *:border-gray-200 *:px-7 *:py-2 *:transition-colors *:duration-300 hover:*:bg-gray-200 focus-visible:*:bg-gray-200">
+        <nav className="flex justify-between gap-3 rounded-3xl bg-white border-2 border-gray-600 p-5 *:rounded-xl *:border *:border-gray-200 *:px-7 *:py-2 *:transition-colors *:duration-300 hover:*:bg-gray-200 focus-visible:*:bg-gray-200">
           <Link href="/" className="bg-gray-200">
             <Logo className="h-6 w-6" />
             <span className="sr-only">Home</span>
