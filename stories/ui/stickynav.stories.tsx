@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StickyNav, StickyNavProps } from '@/components/ui/stickynav';
 
 const meta: Meta<typeof StickyNav> = {
-  title: 'Components/StickyNav',
+  title: 'Components/Nav-StickyNav',
   component: StickyNav,
   tags: ['autodocs'],
   parameters: {

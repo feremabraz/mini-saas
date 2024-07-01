@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { BorderBeam } from '@/components/ui/borderbeam';
 
 const meta = {
-  title: 'UI/BorderBeam',
+  title: 'Components/BorderBeam',
   component: BorderBeam,
   tags: ['autodocs'],
   argTypes: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FixedNav } from '@/components/ui/fixednav';
 
 const meta: Meta<typeof FixedNav> = {
-  title: 'Components/FixedNav',
+  title: 'Components/Nav-FixedNav',
   component: FixedNav,
   tags: ['autodocs'],
   argTypes: {

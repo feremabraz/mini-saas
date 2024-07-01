@@ -4,7 +4,7 @@ import { BentoGrid, BentoCard } from '@/components/ui/bentogrid';
 import { Bird, Coffee, Sun, Moon, Star, Heart, Zap, Cloud } from 'lucide-react';
 
 const meta = {
-  title: 'UI/BentoGrid',
+  title: 'Components/BentoGrid',
   component: BentoGrid,
   tags: ['autodocs'],
   argTypes: {
