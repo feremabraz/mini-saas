@@ -18,12 +18,12 @@ export function Hero() {
           <div className="flex justify-center">
             <a
               className="inline-flex items-center gap-x-2 border text-xs px-2 py-1 rounded-lg transition"
-              href="#"
+              href="https://mini-storybook-liard.vercel.app/"
             >
               <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg bg-muted-foreground/15 font-semibold text-sm">
                 <Terminal className="size-3" />
               </span>
-              gh repo clone feremabraz/mini
+              Now with more components!
             </a>
           </div>
           {/* End Announcement Banner */}
@@ -102,16 +102,16 @@ export function Hero() {
                   htmlFor="password"
                   className="block text-sm font-medium dark:text-white"
                 >
-                  <span className="sr-only">Your password</span>
+                  <span className="sr-only">Pick a password</span>
                 </Label>
                 <Input
                   type="password"
                   id="password"
-                  placeholder="Your password"
+                  placeholder="Pick a password"
                 />
               </div>
               <div className="pt-2 sm:pt-0 grid sm:block sm:flex-[0_0_auto]">
-                <Button>Just check it</Button>
+                <Button>Peek inside</Button>
               </div>
             </div>
           </form>
