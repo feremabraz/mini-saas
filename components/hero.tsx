@@ -81,9 +81,9 @@ export function Hero() {
             </div>
             <div className="border-t sm:border-t-0 sm:border-s  w-32 h-px sm:w-auto sm:h-full mx-auto sm:mx-0" />
             <div className="pt-5 sm:pt-0 sm:ps-5">
-              <div className="text-lg font-semibold">Trust Pilot</div>
+              <div className="text-lg font-semibold">Twitter Followers</div>
               <div className="text-sm text-muted-foreground">
-                Rated best over 7k reviews
+                Loved by thousands of bots on Twitter
               </div>
             </div>
           </div>
